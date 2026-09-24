@@ -71,6 +71,12 @@ node server.js
 
 管理端源码位于 `QD-web`，可使用 uni-app 工具链运行或构建。
 
+## 发行版
+
+当前发行版：[v3.0.2](https://github.com/sumy8023/sign-in-system/releases/tag/v3.0.2)
+
+发行版压缩包包含可直接运行的后端单文件、学生端静态资源、管理端 H5 构建产物、演示 SQL 和配置模板。生产部署前请替换所有演示密钥和本地配置。
+
 ## 部署前检查
 
 1. 替换 SQL 中的演示密钥。
