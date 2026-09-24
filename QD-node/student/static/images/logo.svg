@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160" role="img" aria-labelledby="title">
+  <title id="title">签到打卡系统图标</title>
+  <circle cx="80" cy="80" r="72" fill="#1f2937"/>
+  <circle cx="80" cy="80" r="58" fill="#f8fafc"/>
+  <path d="M80 38v84M51 67h58M56 105c8-13 16-19 24-19s16 6 24 19" fill="none" stroke="#1f2937" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="80" cy="67" r="8" fill="#1f2937"/>
+</svg>

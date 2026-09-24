@@ -1,0 +1,17 @@
+# Dependencies and build output
+QD-node/node_modules/
+QD-web/node_modules/
+QD-node/dist/
+QD-web/unpackage/
+
+# Runtime logs and local configuration
+QD-node/log/
+*.log
+.env
+*.local
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini

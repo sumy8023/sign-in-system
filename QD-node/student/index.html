@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <link rel="icon" href="static/images/favicon.svg" type="image/svg+xml">
+  <title>签到打卡系统</title>
+  <link rel="stylesheet" href="static/css/index.css">
+</head>
+
+<body>
+  <div class="page-shell">
+    <div class="ambient ambient-left"></div>
+    <div class="ambient ambient-right"></div>
+
+    <div class="attendance-card">
+      <div class="brand">
+        <img src="static/images/logo.svg" alt="签到打卡系统图标" class="logo" />
+        <div class="brand-text">
+          <h1 class="title-main">签到打卡系统</h1>
+          <p class="title-sub">请输入学号与姓名，确认签到或签退后提交</p>
+        </div>
+      </div>
+
+      <form id="attendanceForm" class="attendance-form" novalidate>
+      <div class="form-group">
+        <label for="studentId">学号</label>
+        <input type="text" id="studentId" name="studentId"
+          placeholder="请输入学号" />
+      </div>
+
+      <div class="form-group">
+        <label for="studentName">姓名</label>
+        <input type="text" id="studentName" name="studentName" />
+      </div>
+
+      <div class="options">
+        <span class="options-title">操作类型</span>
+        <div class="action-grid">
+          <label class="action-option">
+            <input type="radio" name="action" value="签到" required checked />
+            <span class="action-pill action-pill-signin">签到</span>
+          </label>
+          <label class="action-option">
+            <input type="radio" name="action" value="签退" required />
+            <span class="action-pill action-pill-signout">签退</span>
+          </label>
+        </div>
+      </div>
+
+      <button type="submit">提交</button>
+      <p class="helper-text">提交后会弹出确认框，请再次核对信息</p>
+      </form>
+    </div>
+  </div>
+
+  <div id="confirmModal" class="app-modal-mask" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="app-modal">
+      <button type="button" id="modalCloseBtn" class="app-modal-close" aria-label="关闭">×</button>
+      <div class="app-modal-head">
+        <span class="app-modal-badge">提交确认</span>
+        <h2 class="app-modal-title">确认提交信息</h2>
+        <p class="app-modal-subtitle">请核对后再提交，避免错签或错退。</p>
+      </div>
+      <div class="confirm-panel">
+        <div class="confirm-title">请认真核对以下内容</div>
+        <div class="confirm-row">
+          <span class="confirm-label">学号</span>
+          <span id="confirmStudentId" class="confirm-value"></span>
+        </div>
+        <div class="confirm-row">
+          <span class="confirm-label">姓名</span>
+          <span id="confirmStudentName" class="confirm-value"></span>
+        </div>
+        <div class="confirm-row">
+          <span class="confirm-label">操作</span>
+          <span id="confirmAction" class="confirm-value"></span>
+        </div>
+      </div>
+      <div class="app-modal-actions">
+        <button type="button" id="modalCancelBtn" class="modal-action modal-action-ghost">取消</button>
+        <button type="button" id="modalConfirmBtn" class="modal-action modal-action-primary">确认</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="appLoading" class="app-loading-mask" aria-hidden="true">
+    <div class="app-loading-card">
+      <span class="app-loading-spinner" aria-hidden="true"></span>
+      <span id="appLoadingText">正在提交...</span>
+    </div>
+  </div>
+
+  <div id="appToast" class="app-toast app-toast--info" aria-live="polite">
+    <span id="appToastIcon" class="app-toast-icon">i</span>
+    <span id="appToastText" class="app-toast-text"></span>
+  </div>
+
+  <script src="static/js/index.js"></script>
+</body>
+
+</html>
